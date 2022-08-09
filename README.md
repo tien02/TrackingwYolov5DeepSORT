@@ -6,7 +6,9 @@ For each object detected in the previous frame, Kalman Filter will predict its n
  
 For occlusion objects, DeepSORT counts the number of frames it disappears. If it is less than 30 frames, the trajectory is still keeping, otherwise delete that trajectory.
  
-This repository contains an implementation of DeepSORT. Using [Yolov5](https://github.com/ultralytics/yolov5) as Object Detector and OpenCV to process video. The input is a video or webcam by default, the output is video which has the detected objects and its relative ID.
+This repository contains an implementation of DeepSORT for Pedestrian Tracking in surveillance camera. Use [Yolov5](https://github.com/ultralytics/yolov5) to detect pedestrian and OpenCV to process video. The input is a video or webcam(by default), the output is the video which has the detected objects and its relative ID.
+
+![](demo/demo.gif)
 
 ## Usage
 1. Clone this repository
@@ -15,7 +17,7 @@ git clone https://github.com/tien02/TrackingwYolov5DeepSORT.git
 ```
 2. Create virtual environment (venv), then activate it.
 ```
-python -m venv your venv
+python -m venv your_venv
 ```
 3. Install dependencies
 ```
@@ -30,11 +32,10 @@ python tracking.py [-h]
                     [--display]
                     [--save]
 ```
+Use `--display` to enable display.
 
+Use `--save` to save video. Video will be saved to `result/your_video_name.avi`.
 ## References 
 - Paper: [Simple Online and Realtime Tracking with a Deep Association Metric](https://arxiv.org/abs/1703.07402)
 - DeepSORT code: [ZQPei/deep_sort_pytorch](https://github.com/ZQPei/deep_sort_pytorch) 
 - Yolov5 code: [ultralytics/yolov5](https://github.com/ultralytics/yolov5)
-
-
-Approaching Pedestrian Tracking problem on surveillance camera with YoloV5 for pedestrian detection and DeepSORT for tracking.
