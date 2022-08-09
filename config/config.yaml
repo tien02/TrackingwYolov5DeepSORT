@@ -1,0 +1,26 @@
+yolo_detector:
+  weight: 'weights/yolov5s.pt'
+  classes: 0
+  conf: 0.25
+  iou: 0.45
+deepsort_tracker:
+  model_path: ./deep_sort/deep/checkpoint/ckpt.t7
+  max_dist: 0.2
+  min_confidence: 0.3
+  nms_max_overlap: 0.5
+  max_iou_distance: 0.5
+  max_age: 70
+  n_init: 3
+  nn_budget: 100
+  use_cuda: False
+video:
+  scale_video_size: 1
+  display: True 
+draw:
+  bouding_box:
+    thick: 2
+    color: [0,255,0]
+  text: 
+    thick: 2
+    color: [255,0,0]
+    font_scale: 0.5
