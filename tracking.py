@@ -145,11 +145,11 @@ def parse_opt():
         save: Path to save video after processing completely
     '''
     parser = argparse.ArgumentParser()
-    parser.add_argument('--config', type=str, default=CONFIG_PATH, help="add config file")
-    parser.add_argument('--weight', type=str, default=None, help="YoloV5 checkpoint. By default take checkpoint path in config. Otherwise will load from tochhub")
-    parser.add_argument('--source', type=str, default=0, help="Input to process. Default is '0' for webcam. Otherwise give relative path to video")
-    parser.add_argument('--display', action=argparse.BooleanOptionalAction, help="Show video")
-    parser.add_argument('--save', action=argparse.BooleanOptionalAction, help="Save video")
+    parser.add_argument('--config', type=str, metavar='', default=CONFIG_PATH, help="add config file")
+    parser.add_argument('--weight', type=str, metavar='', default=None, help="YoloV5 checkpoint. By default take checkpoint path in config. Otherwise will load from tochhub")
+    parser.add_argument('--source', type=str, metavar='', default=0, help="Input to process. Default is '0' for webcam. Otherwise give relative path to video")
+    parser.add_argument('--display', action='store_true', help="Show video")
+    parser.add_argument('--save', action='store_true', help="Save video")
     opt = parser.parse_args()
     return opt
 
